@@ -1,3 +1,5 @@
+import { chartFrame, monitoringFrame } from './illustration-frames.js';
+
 // One lightweight clock for visible illustrations. SVG remains useful without JS.
 export function initializeIllustrations(motion) {
   const scenes = [...document.querySelectorAll('[data-animated-art]')].map(svg => {
@@ -7,9 +9,8 @@ export function initializeIllustrations(motion) {
       const line = find('.chart-line'), area = find('.chart-area');
       const dots = [...svg.querySelectorAll('.chart-dot')];
       const x = [50,130,210,290,370,450,550];
-      const base = [219,188,200,139,157,105,82], amplitude = [11,25,20,32,26,22,13];
       return { svg, draw(time) {
-        const y = base.map((value,i) => value + amplitude[i] * Math.sin(time * 1.2) * Math.cos(i * .7 + time * .4));
+        const y = chartFrame(time);
         const path = x.map((value,i) => `${i ? 'L' : 'M'}${value} ${y[i].toFixed(2)}`).join('');
         line.setAttribute('d',path); area.setAttribute('d',path+'V245H50Z');
         dots.forEach((dot,i) => dot.setAttribute('cy',y[i].toFixed(2)));
@@ -26,9 +27,27 @@ export function initializeIllustrations(motion) {
       }};
     }
     if (kind === 'antenna') {
-      const pattern=find('.antenna-pattern');
+      const dish=find('.dish-head'), waves=[...svg.querySelectorAll('.dish-wave')];
       return { svg, draw(time) {
-        pattern.setAttribute('transform',`rotate(${(time * 13).toFixed(3)}) scale(${(.95 + .07 * Math.sin(time * 1.4)).toFixed(4)})`);
+        dish.setAttribute('transform',`translate(300 190) rotate(${(-25 + 15 * Math.sin(time * .35)).toFixed(3)}) scale(${(.92 + .08 * Math.cos(time * .35)).toFixed(4)} 1)`);
+        waves.forEach((wave,index) => {
+          const phase=(time / 3 + index / 3) % 1;
+          wave.setAttribute('transform',`translate(0 ${(-phase * 18).toFixed(2)}) scale(${(1 + phase * .22).toFixed(3)})`);
+          wave.setAttribute('opacity',(Math.sin(phase * Math.PI) * .8).toFixed(3));
+        });
+      }};
+    }
+    if (kind === 'security') {
+      const ring=find('.risk-ring'), score=find('.risk-total');
+      const bars=[...svg.querySelectorAll('.risk-bar')], labels=[...svg.querySelectorAll('.risk-value')];
+      return {svg, draw(time) {
+        const {components,total}=monitoringFrame(time);
+        score.textContent=String(total);
+        ring.setAttribute('stroke-dasharray',`${total} ${100-total}`);
+        components.forEach((value,index) => {
+          bars[index].setAttribute('width',(143 * value / 100).toFixed(2));
+          labels[index].textContent=String(value);
+        });
       }};
     }
     if (kind === 'lab') {

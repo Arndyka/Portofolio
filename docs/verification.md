@@ -2,6 +2,14 @@
 
 Date: 15 October 2026 (Asia/Jakarta).
 
+## Calmer illustrations and coherent monitoring demo
+
+- Replaced the rotating radiation plot with a parabolic dish that scans slowly and emits fading signal arcs.
+- Chart observations update one at a time over 2.4 seconds, with a brief hold before the next observation. Other points remain fixed.
+- Monitoring uses four visible component scores on a 0–100 scale. The total is their rounded arithmetic mean; the ring percentage and bar lengths use those same values. The graphic labels this as an illustrative demo calculation.
+- Removed the independent security-ring CSS motion so it cannot disagree with the total score.
+- All 30 tests passed, including sequential chart movement, score consistency, displayed bar/ring agreement, pause and reduced-motion behavior. Visually inspected the updated dish, chart and monitoring diagram.
+
 ## Project illustration animation
 
 - Stunting's illustrative chart line, filled area and markers move together. Curtain panels open and meet in the middle when closed. The instrument waveform flows within its display, and the teal antenna pattern rotates and changes scale around the fixed origin.

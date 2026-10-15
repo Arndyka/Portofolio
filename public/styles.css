@@ -294,9 +294,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #347c69;outline-offset:5p
 .motion-enabled .project-card{transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease,opacity .7s ease}
 @media(hover:hover){.motion-enabled .project-card.is-visible:hover{transform:translateY(-6px)}}
 .motion-enabled .is-active .art-radar path[stroke-dasharray],.motion-enabled .is-active .art-knowledge path[stroke-dasharray]{animation:diagram-flow 3s linear infinite}
-.motion-enabled .is-active .art-security circle:nth-of-type(2){animation:gauge-breathe 5s ease-in-out infinite alternate}
 .motion-enabled .is-active .art-iot circle,.motion-enabled .is-active .art-data circle{animation:dot-breathe 4s ease-in-out infinite alternate}
-.motion-enabled .is-active .art-antenna g path[stroke-dasharray]{animation:diagram-flow 5s linear infinite}
 .motion-enabled .is-active .art-lab path[stroke="#9bdfc7"]{animation:dot-breathe 3.5s ease-in-out infinite alternate}
 .motion-enabled .is-active .art-dashboard rect[fill="#294c45"]{animation:dot-breathe 4s ease-in-out infinite alternate}
 .motion-paused [data-reveal]{opacity:1;transform:none;transition:none}
