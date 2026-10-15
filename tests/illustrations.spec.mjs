@@ -8,12 +8,14 @@ for(const [slug,selector,attribute] of illustrations) test(`${slug} illustration
  const initial=await moving.getAttribute(attribute);
  await expect.poll(()=>moving.getAttribute(attribute)).not.toBe(initial);
  await page.getByRole('button',{name:'Jeda animasi',exact:true}).click();
+ await expect(page.getByRole('button',{name:'Putar animasi',exact:true})).toHaveAttribute('aria-pressed','true');
  const paused=await moving.getAttribute(attribute);
  await page.waitForTimeout(150);
  expect(await moving.getAttribute(attribute)).toBe(paused);
  await page.getByRole('button',{name:'Putar animasi',exact:true}).click();
  await expect.poll(()=>moving.getAttribute(attribute)).not.toBe(paused);
  await page.emulateMedia({reducedMotion:'reduce'});
+ await expect(page.getByRole('button',{name:'Gerakan dikurangi sesuai pengaturan perangkat'})).toBeDisabled();
  const reduced=await moving.getAttribute(attribute);
  await page.waitForTimeout(150);
  expect(await moving.getAttribute(attribute)).toBe(reduced);

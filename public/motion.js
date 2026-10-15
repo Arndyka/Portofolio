@@ -1,12 +1,13 @@
 export function initializeMotion() {
   const root = document.documentElement;
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  let systemReduced = reduced.matches;
   const buttons = [...document.querySelectorAll('.motion-toggle')];
   const listeners = new Set();
   let userPaused = false;
   try { userPaused = localStorage.getItem('portfolio-motion') === 'paused'; } catch {}
   const controller = {
-    get paused() { return reduced.matches || userPaused || document.hidden; },
+    get paused() { return systemReduced || userPaused || document.hidden; },
     subscribe(callback) { listeners.add(callback); return () => listeners.delete(callback); },
   };
   function update() {
@@ -15,10 +16,10 @@ export function initializeMotion() {
     root.classList.toggle('motion-paused', paused);
     const id = root.lang === 'id';
     for (const button of buttons) {
-      const label = reduced.matches
+      const label = systemReduced
         ? (id ? 'Gerakan dikurangi sesuai pengaturan perangkat' : 'Motion reduced by device preference')
         : paused ? (id ? 'Putar animasi' : 'Play animations') : (id ? 'Jeda animasi' : 'Pause animations');
-      button.disabled = reduced.matches;
+      button.disabled = systemReduced;
       button.setAttribute('aria-label', label);
       button.setAttribute('title', label);
       button.setAttribute('aria-pressed', String(paused));
@@ -31,7 +32,10 @@ export function initializeMotion() {
     try { localStorage.setItem('portfolio-motion', userPaused ? 'paused' : 'playing'); } catch {}
     update();
   });
-  reduced.addEventListener('change', update);
+  reduced.addEventListener('change', event => {
+    systemReduced = event.matches;
+    update();
+  });
   document.addEventListener('visibilitychange', update);
   const reveals = [...document.querySelectorAll('[data-reveal]')];
   if ('IntersectionObserver' in window) {
