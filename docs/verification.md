@@ -2,6 +2,12 @@
 
 Date: 15 October 2026 (Asia/Jakarta).
 
+## Single RF main lobe
+
+- Restored the circular RF grid with one fixed main-lobe direction and three nested contours. A slow 12-second cycle lengthens and narrows the lobe as it strengthens, then shortens and broadens it as it weakens.
+- Uses the same shape function for static SVG fallback and live frames; existing pause, reduced-motion and offscreen controls apply.
+- All 30 browser tests passed with the new lobe path replacing the dish animation target. Inspected weak/strong desktop frames and the mobile card; moved the diagram label clear of the mobile project index.
+
 ## Calmer illustrations and coherent monitoring demo
 
 - Replaced the rotating radiation plot with a parabolic dish that scans slowly and emits fading signal arcs.

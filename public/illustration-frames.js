@@ -1,5 +1,18 @@
 const smooth = value => value * value * (3 - 2 * value);
 
+// One fixed beam direction; strength changes its length and angular width.
+// This is a conceptual portfolio illustration, not a measured antenna pattern.
+export function radiationFrame(time) {
+  const strength = (1 - Math.cos(time * Math.PI / 6)) / 2;
+  const spread = .65 - .4 * strength;
+  const amplitude = 82 + 48 * strength;
+  return Array.from({length:241}, (_,index) => {
+    const angle = -Math.PI + index * Math.PI / 120;
+    const radius = 6 + amplitude * Math.exp(-.5 * (angle / spread) ** 2);
+    return `${index ? 'L' : 'M'}${(Math.sin(angle) * radius).toFixed(2)} ${(-Math.cos(angle) * radius).toFixed(2)}`;
+  }).join('') + 'Z';
+}
+
 // Only one observation changes at a time; other observations keep their values.
 export function chartFrame(time) {
   const snapshots = [

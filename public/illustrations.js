@@ -1,4 +1,4 @@
-import { chartFrame, monitoringFrame } from './illustration-frames.js';
+import { chartFrame, monitoringFrame, radiationFrame } from './illustration-frames.js';
 
 // One lightweight clock for visible illustrations. SVG remains useful without JS.
 export function initializeIllustrations(motion) {
@@ -27,14 +27,10 @@ export function initializeIllustrations(motion) {
       }};
     }
     if (kind === 'antenna') {
-      const dish=find('.dish-head'), waves=[...svg.querySelectorAll('.dish-wave')];
+      const contours=[...svg.querySelectorAll('.rf-lobe')];
       return { svg, draw(time) {
-        dish.setAttribute('transform',`translate(300 190) rotate(${(-25 + 15 * Math.sin(time * .35)).toFixed(3)}) scale(${(.92 + .08 * Math.cos(time * .35)).toFixed(4)} 1)`);
-        waves.forEach((wave,index) => {
-          const phase=(time / 3 + index / 3) % 1;
-          wave.setAttribute('transform',`translate(0 ${(-phase * 18).toFixed(2)}) scale(${(1 + phase * .22).toFixed(3)})`);
-          wave.setAttribute('opacity',(Math.sin(phase * Math.PI) * .8).toFixed(3));
-        });
+        const path=radiationFrame(time);
+        contours.forEach(contour => contour.setAttribute('d',path));
       }};
     }
     if (kind === 'security') {

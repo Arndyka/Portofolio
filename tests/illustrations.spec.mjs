@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-const illustrations=[['stunting','.chart-line','d'],['iot-curtain','.curtain-left','transform'],['antenna','.dish-head','transform'],['pam','.risk-ring','stroke-dasharray'],['practicum','.lab-wave','d']];
+const illustrations=[['stunting','.chart-line','d'],['iot-curtain','.curtain-left','transform'],['antenna','.rf-main-lobe','d'],['pam','.risk-ring','stroke-dasharray'],['practicum','.lab-wave','d']];
 for(const [slug,selector,attribute] of illustrations) test(`${slug} illustration moves and respects pause and reduced motion`,async({page})=>{
  await page.goto('/Portofolio/projects/'+slug+'/');
  const figure=page.locator('.case-figure');await figure.scrollIntoViewIfNeeded();

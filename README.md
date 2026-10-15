@@ -28,7 +28,7 @@ The production site has no runtime package dependencies, database, account syste
 - `public/styles.css`: responsive visual system and print styles.
 - `public/app.js`: progressive enhancements for filters, mobile navigation and printing.
 - `public/motion.js` and `public/globe.js`: scroll reveals, persistent pause control and rotating canvas globe.
-- `public/illustrations.js`: sequential chart updates, opening curtains, flowing instrument waveform, scanning parabolic antenna with signal pulses and synchronized demo risk scores, using a shared clock for visible SVGs.
+- `public/illustrations.js`: sequential chart updates, opening curtains, flowing instrument waveform, a fixed single RF main lobe that narrows as it strengthens and broadens as it weakens and synchronized demo risk scores, using a shared clock for visible SVGs.
 - `public/illustration-frames.js`: deterministic chart and monitoring frames. The demo total is the rounded mean of the four visible component scores; this is illustrative, not an actual scoring policy.
 - `public/assets/`: supplied portrait, locally hosted fonts with their licenses, favicon and social image.
 
