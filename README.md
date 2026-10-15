@@ -36,6 +36,8 @@ The production site has no runtime package dependencies, database, account syste
 
 Every localized content field has `id` and `en` values. After edits, run `npm run build` and `npm test` before pushing. Build output in `dist/` is ignored by Git and generated in CI. `BASE_PATH` can override the default `/Portofolio/` for other hosting setups; the canonical origin is configured in the builder.
 
+Experience entries distinguish `text` (contribution), `outcome` (completed deliverables) and `learning` (skills developed). Case-study summaries and deliverables identify individual contributions separately from team outcomes; learning statements describe skills practiced rather than unverified mastery or business impact. Keep this evidence-based structure when updating the content.
+
 ## Verification
 
 ```sh

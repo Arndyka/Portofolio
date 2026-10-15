@@ -2,6 +2,12 @@
 
 Date: 15 October 2026 (Asia/Jakarta).
 
+## Contributions, deliverables and skills developed
+
+- Rechecked the owner's CV and portfolio for internship outputs, research/prototype contributions and practicum responsibilities. Rewrote summaries, all four experience entries, six project summaries/deliverables/learning sections, education and course completion in both languages.
+- Experience now separates responsibilities, deliverables and skills developed. Team outcomes remain attributed to teams; no new award, production-adoption, accuracy, efficiency or learner-improvement metrics were introduced.
+- All 30 browser tests passed. Visually inspected the updated summary, experience sections, mobile experience and case-study layout. Both localized printable profiles now span three readable pages; all six print pages were rendered and inspected.
+
 ## Professional copy and discipline icons
 
 - Revised Indonesian and English positioning, headings, profile, project subtitles and technical reviews, contact copy, and error-page text to use direct professional language.

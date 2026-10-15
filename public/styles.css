@@ -166,6 +166,10 @@ button:focus-visible,a:focus-visible{outline:3px solid #347c69;outline-offset:5p
 .experience-row .eyebrow{color:var(--muted);font-size:14px;letter-spacing:.7px}
 .experience-row h3{margin:10px 0 16px;font-size:28px}
 .experience-row p{font-size:16px;line-height:1.85;color:var(--muted);max-width:740px}
+.activity-details{margin:0;max-width:740px}
+.activity-details>div+div{margin-top:17px}
+.activity-details dt{font-size:14px;font-weight:700;line-height:1.6;color:var(--ink);margin-bottom:5px}
+.activity-details dd{margin:0;font-size:16px;line-height:1.85;color:var(--muted)}
 .row-number{font-size:14px;color:var(--muted);text-align:right;padding-top:3px}
 .tags{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:18px 0 0;list-style:none}
 .tags li{font-size:14px;border:1px solid #c5d3c9;border-radius:6px;padding:4px 11px;color:#3d5c51}
@@ -418,6 +422,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #347c69;outline-offset:5p
  .profile-page .experience-row{grid-template-columns:140px 1fr;gap:18px;padding-block:12px;break-inside:avoid}
  .profile-page .experience-row h3{font-size:12pt;margin-block:5px 8px}.profile-page .experience-row p,.profile-page section>p{font-size:9pt;line-height:1.5;color:#222}
  .profile-page .tags{display:none}.timeline-date{font-size:8pt}.eyebrow{color:#333!important;font-size:8pt!important;letter-spacing:.6px}
+ .activity-details dt{font-size:9pt;margin-bottom:2px}.activity-details dd{font-size:9pt;line-height:1.5;color:#222}.activity-details>div+div{margin-top:7px}
  .profile-projects{gap:17px}.profile-projects article{padding-top:14px}.profile-projects p{font-size:9pt;line-height:1.55;margin-top:7px;color:#222}.profile-projects h3{font-size:11pt}.profile-projects small{font-size:8pt;margin-top:7px}
  a{color:#111}.profile-page section>h3{font-size:12pt}
 }
