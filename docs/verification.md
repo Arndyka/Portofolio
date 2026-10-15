@@ -7,6 +7,8 @@ Date: 15 October 2026 (Asia/Jakarta).
 - The owner confirmed AI/ML work is an OJT assignment rather than a separate formal position. Updated the Indonesian and English introduction, summary, primary experience title, assignment deliverables, and access-monitoring case study accordingly.
 - Primary role: Officer Development Program – IT, Batch 328. AI applications and data analysis are explicitly framed within OJT; existing dates remain unchanged.
 - All 30 browser tests passed before final minor copy tightening. Rebuilt afterwards and visually checked the mobile introduction, project card, and English profile experience. `git diff --check` passed.
+- Independent read-only review approved the change and verified all six affected localized home, profile, and monitoring routes against the preview.
+- Published source `f8785335901b30acc252c1ed646f1f3d327a6830` through [successful build and deploy](https://github.com/Arndyka/Portofolio/actions/runs/38717884148). All 34 public files returned HTTP 200 and matched the local build.
 
 ## Contributions, deliverables and skills developed
 
