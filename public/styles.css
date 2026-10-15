@@ -216,7 +216,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #347c69;outline-offset:5p
 .case-meta p{font-size:17px;line-height:1.7;max-width:680px;margin-top:9px}
 .case-meta .eyebrow{font-size:14px;color:#b4cdd4}
 .case-figure{position:relative;margin:-65px auto 0;max-width:1000px;background:#102532;border:1px solid #4c6a74;border-radius:16px;overflow:hidden}
-.case-figure svg{width:100%;height:auto;max-height:480px}
+.case-figure>svg{width:100%;height:auto;max-height:480px}
 .case-figure figcaption{padding:16px 22px;text-align:center;border-top:1px solid #32525e;color:#b7d2d7;font-size:14px;letter-spacing:.5px}
 .case-layout{display:grid;grid-template-columns:225px 1fr;gap:8%;max-width:1080px;margin:68px auto 0}
 .case-aside{position:sticky;top:118px;align-self:start}
