@@ -2,6 +2,12 @@
 
 Date: 15 October 2026 (Asia/Jakarta).
 
+## ODP IT and OJT alignment
+
+- The owner confirmed AI/ML work is an OJT assignment rather than a separate formal position. Updated the Indonesian and English introduction, summary, primary experience title, assignment deliverables, and access-monitoring case study accordingly.
+- Primary role: Officer Development Program – IT, Batch 328. AI applications and data analysis are explicitly framed within OJT; existing dates remain unchanged.
+- All 30 browser tests passed before final minor copy tightening. Rebuilt afterwards and visually checked the mobile introduction, project card, and English profile experience. `git diff --check` passed.
+
 ## Contributions, deliverables and skills developed
 
 - Rechecked the owner's CV and portfolio for internship outputs, research/prototype contributions and practicum responsibilities. Rewrote summaries, all four experience entries, six project summaries/deliverables/learning sections, education and course completion in both languages.
