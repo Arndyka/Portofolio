@@ -24,3 +24,12 @@ No Critical or Important findings. One minor encoding issue in English 404 copy 
 Original professional facts were checked by the implementing agent against the supplied CV, portfolio, academic reports and project documentation. No unsupported business-impact metrics, production-adoption claims or certification claims were added. Review is not a comprehensive assistive-technology audit. Physical printer behavior can vary.
 
 Deployment is independently recorded by the repository's **Test and deploy portfolio** Actions workflow and **github-pages** environment; its successful run and live URLs are the publication evidence.
+
+## Published result
+
+- Site: https://arndyka.github.io/Portofolio/
+- Successful build and deploy: https://github.com/Arndyka/Portofolio/actions/runs/38704626422
+- Deployed source: `a30393b31b3529d89750fd8d1b7bf9e0673da509`.
+- GitHub Pages uses workflow deployment with HTTPS enforced.
+- All 33 public files returned HTTP 200 and matched local build output (normalizing text line endings). This includes all 22 HTML pages, scripts, CSS, images, fonts, licenses, sitemap and robots file.
+- The documentation-only verification commit does not change published website files.

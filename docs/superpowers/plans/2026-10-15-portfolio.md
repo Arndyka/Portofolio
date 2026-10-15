@@ -38,5 +38,5 @@ Files: .github/workflows/deploy.yml, README.md, docs/verification.md.
 Interfaces: GitHub Actions builds and publishes dist; source and Pages use same commit.
 - [x] Review entire change with a fresh reviewer; fix significant findings and run full checks.
 - [x] Create minimal build-and-Pages workflow, document editing and content boundaries.
-- [ ] Push approved source to main; enable Pages workflow via authenticated GitHub API.
-- [ ] Verify successful Actions deployment and fetch live home, English, project and asset URLs.
+- [x] Push approved source to main; enable Pages workflow via authenticated GitHub API.
+- [x] Verify successful Actions deployment and fetch live home, English, project and asset URLs.
