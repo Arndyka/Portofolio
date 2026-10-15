@@ -2,6 +2,19 @@
 
 Date: 15 October 2026 (Asia/Jakarta).
 
+## Animated visual refresh
+
+- Retained navy/teal, enlarged body text to 16–18 px and UI labels to at least 14 px, and rebuilt responsive spacing and cards.
+- Replaced the previous portrait with the owner's exact attached 867 × 1280 color JPEG; removed the unused previous image from published assets.
+- Added staged hero text, light beams, circuit pulses, dotted land globe, scroll reveals, project diagram motion, floating navigation and contact glow.
+- Persistent pause, device reduced-motion preference, offscreen suspension, hidden-tab suspension, keyboard access and static fallbacks are implemented.
+- `npm.cmd run build`: 20 localized content pages and 2 localized error pages.
+- `npm.cmd test`: all 20 browser tests passed. Checks include readable type, new portrait, changing/frozen/resumed globe frames, reduced-motion suppression, no-JavaScript fallback, navigation, links, four viewport widths and automated axe checks on settled visible content.
+- Visually inspected desktop and phone hero, portrait, network, project cards, globe, case study and profile. Rendered and inspected both pages of the refreshed printable profile.
+- `git diff --check` passed. The reference video and QA screenshots remain ignored local files.
+
+The original release record below is retained for provenance. Publication of this refresh is recorded separately after deployment.
+
 ## Local checks
 
 - `npm run build`: generated 20 localized content pages and 2 localized error pages.
