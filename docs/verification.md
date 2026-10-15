@@ -12,8 +12,16 @@ Date: 15 October 2026 (Asia/Jakarta).
 - `npm.cmd test`: all 20 browser tests passed. Checks include readable type, new portrait, changing/frozen/resumed globe frames, reduced-motion suppression, no-JavaScript fallback, navigation, links, four viewport widths and automated axe checks on settled visible content.
 - Visually inspected desktop and phone hero, portrait, network, project cards, globe, case study and profile. Rendered and inspected both pages of the refreshed printable profile.
 - `git diff --check` passed. The reference video and QA screenshots remain ignored local files.
+- Independent read-only review of `91d04ee..14fa3638` found no defects and approved merge. Additional browser probes covered nine widths from 320–1440 px, sticky-header bounds, persisted pause with zero running animations, and no-JavaScript navigation at 320 px. Review used Edge; cross-engine behavior has not been independently checked.
 
-The original release record below is retained for provenance. Publication of this refresh is recorded separately after deployment.
+### Refresh publication
+
+- Successful build and deploy: https://github.com/Arndyka/Portofolio/actions/runs/38708174844
+- Deployed source: `7b5e7400080807ed4c22208bf5249e16bd0de4eb`.
+- All 36 public files returned HTTP 200 and matched the refreshed local build, normalizing text line endings. This includes the replacement portrait and all motion assets.
+- Live site: https://arndyka.github.io/Portofolio/
+
+The original release record below is retained for provenance.
 
 ## Local checks
 
