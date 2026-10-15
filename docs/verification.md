@@ -7,6 +7,9 @@ Date: 15 October 2026 (Asia/Jakarta).
 - Stunting's illustrative chart line, filled area and markers move together. Curtain panels open and meet in the middle when closed. The instrument waveform flows within its display, and the teal antenna pattern rotates and changes scale around the fixed origin.
 - SVG drawings remain available without JavaScript. One animation clock updates visible illustrations at approximately 30 fps, freezes for user pause, reduced-motion, hidden tabs and print, and suspends offscreen scenes.
 - All 26 browser tests passed, including new checks of each illustration's changing geometry, paused/reduced-motion stability, and offscreen suspension/resumption.
+- Inspected multiple animation phases, including curtains fully open and closed. Independent review found no blocking illustration defects; figure sizing was scoped to the outer SVG to preserve the waveform viewport.
+- Motion preferences now use the change event's explicit state, and tests wait for the control to acknowledge changes before checking frozen frames. Fifteen repeated animation checks and the final full 26-test suite passed. Earlier intermittent dynamic-media test behavior was observed; its browser-level cause was not established.
+- Published source `1365a6560794641f038f1cc16af8098b92cd6414` via [successful build and deploy](https://github.com/Arndyka/Portofolio/actions/runs/38711199076). All 33 public files returned HTTP 200 and matched the local build, including the new animation module.
 
 ## Public content and illustration correction
 
