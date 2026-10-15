@@ -1,3 +1,5 @@
+import { initializeMotion } from './motion.js';
+import { initializeGlobe } from './globe.js';
 document.documentElement.classList.add('js');
 const menu=document.querySelector('.menu-toggle');
 const nav=document.querySelector('#main-nav');
@@ -16,7 +18,13 @@ for(const button of filters)button.addEventListener('click',()=>{
  const category=button.dataset.filter;
  for(const filter of filters)filter.setAttribute('aria-pressed',String(filter===button));
  let shown=0;
- for(const card of cards){card.hidden=category!=='all'&&card.dataset.category!==category;if(!card.hidden)shown++;}
+ for(const card of cards){card.hidden=category!=='all'&&card.dataset.category!==category;if(!card.hidden){shown++;card.classList.add('is-visible');}}
  if(count)count.textContent=`${shown} ${count.dataset.label}`;
 });
 document.querySelector('.print-button')?.addEventListener('click',()=>window.print());
+const motion = initializeMotion();
+initializeGlobe(document.querySelector('.globe-canvas'), motion);
+const header = document.querySelector('.site-header');
+function updateHeader(){header?.classList.toggle('is-scrolled',window.scrollY>64);}
+addEventListener('scroll',updateHeader,{passive:true});
+updateHeader();

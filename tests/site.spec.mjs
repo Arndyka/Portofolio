@@ -53,6 +53,10 @@ for(const width of [320,390,768,1440])test(`pages fit ${width}px viewport`,async
 test('semantic pages meet automated accessibility checks',async({page})=>{
  for(const route of ['', 'en/', 'projects/pam/','profile/']){
   await page.goto(home+route);
+  // Reveal each section as a visitor scrolls, then audit settled text colors.
+  for (const element of await page.locator('[data-reveal]').all()) await element.scrollIntoViewIfNeeded();
+  await expect.poll(() => page.locator('[data-reveal]').evaluateAll(elements => elements.every(element => getComputedStyle(element).opacity === '1'))).toBe(true);
+  await page.evaluate(() => document.fonts.ready);
   const result=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa']).analyze();
   expect(result.violations).toEqual([]);
  }
