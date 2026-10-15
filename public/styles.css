@@ -96,6 +96,8 @@ button:focus-visible,a:focus-visible{outline:3px solid #347c69;outline-offset:5p
 .network-node{position:absolute;display:flex;align-items:center;gap:16px;padding:18px 20px;border:1px solid #365c67;border-radius:14px;background:linear-gradient(120deg,#173541,#0e2936);width:246px;box-shadow:0 10px 25px #0000001a;font-size:20px;font-weight:600}
 .network-node small{display:block;font-size:14px;font-weight:400;color:#b2ced1;line-height:1.5;margin-top:5px}
 .node-symbol{font-size:28px;line-height:1;color:var(--teal);width:33px;text-align:center;flex-shrink:0}
+.node-symbol{display:flex;align-items:center;justify-content:center}
+.node-symbol svg{width:28px;height:28px;flex-shrink:0}
 .node-engineering{top:40px;left:0}.node-data{bottom:40px;left:0}.node-ai{top:40px;right:0}.node-banking{bottom:40px;right:0}
 .network-hub{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;justify-content:center;width:190px;height:150px;gap:9px;background:radial-gradient(ellipse at top,#225854,#12323d 70%);border:1px solid #6ab8a6;border-radius:22px;box-shadow:0 0 55px #68dfbb18}
 .hub-mark{font-size:61px;font-weight:700;line-height:1;letter-spacing:-7px}

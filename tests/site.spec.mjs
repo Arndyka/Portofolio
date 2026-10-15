@@ -3,7 +3,7 @@ import AxeBuilder from '@axe-core/playwright';
 const home='/Portofolio/';
 test('home introduces the owner and real content without console errors',async({page})=>{
  const errors=[];page.on('pageerror',e=>errors.push(e.message));
- await page.goto(home);await expect(page.locator('h1')).toContainText('teknologi');
+ await page.goto(home);await expect(page.locator('h1')).toContainText('Teknologi');
  await expect(page.locator('.project-card')).toHaveCount(6);
  await expect(page.getByRole('link',{name:'Email Arnoldus'})).toHaveAttribute('href','mailto:arnolduzandy123@gmail.com');
  expect(errors).toEqual([]);
@@ -30,7 +30,7 @@ test('each case study and locale counterpart is reachable',async({page})=>{
  }
 });
 test('English homepage and printable profile work',async({page})=>{
- await page.goto(home+'en/');await expect(page.locator('h1')).toContainText('technology');
+ await page.goto(home+'en/');await expect(page.locator('h1')).toContainText('Technology');
  await page.getByRole('link',{name:'View profile',exact:true}).click();
  await expect(page.locator('h1')).toContainText('Arnoldus');
  await expect(page.getByRole('button',{name:'Print / Save PDF'})).toBeVisible();
@@ -81,7 +81,7 @@ test('404 helps a visitor return home',async({page})=>{
  await expect(page.locator('html')).toHaveAttribute('lang','en');
  await expect(page.getByRole('link',{name:'Back to home',exact:true})).toBeVisible();
  await page.goto(home+'missing-page');
- await page.getByRole('link',{name:'Kembali ke beranda'}).click();await expect(page.locator('h1')).toContainText('teknologi');
+ await page.getByRole('link',{name:'Kembali ke beranda'}).click();await expect(page.locator('h1')).toContainText('Teknologi');
 });
 test('reduced motion and keyboard filter access remain usable',async({page})=>{
  await page.emulateMedia({reducedMotion:'reduce'});await page.goto(home);

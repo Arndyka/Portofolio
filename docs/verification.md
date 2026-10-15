@@ -2,6 +2,13 @@
 
 Date: 15 October 2026 (Asia/Jakarta).
 
+## Professional copy and discipline icons
+
+- Revised Indonesian and English positioning, headings, profile, project subtitles and technical reviews, contact copy, and error-page text to use direct professional language.
+- Replaced the network slogan with “Integrasi Kompetensi” / “Integrated Expertise” and standardized its four discipline icons: engineering schematic, database, AI chip and financial institution.
+- Refreshed the social-sharing card and its source generator. No changes to dates, qualifications, project ownership or measured results.
+- All 30 browser tests passed. Inspected desktop and phone hero/network in both languages, the sharing card, and both pages of the printable Indonesian profile. `git diff --check` passed.
+
 ## Single RF main lobe
 
 - Restored the circular RF grid with one fixed main-lobe direction and three nested contours. A slow 12-second cycle lengthens and narrows the lobe as it strengthens, then shortens and broadens it as it weakens.

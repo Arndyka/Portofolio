@@ -1,5 +1,6 @@
 import { readFileSync } from 'node:fs';
 import { profile } from '../content/profile.mjs';
+import { disciplineIcon } from './icons.mjs';
 const pick=(l,id,en)=>l==='id'?id:en;
 const points=JSON.parse(readFileSync(new URL('../public/assets/globe-points.json',import.meta.url),'utf8'));
 
@@ -11,8 +12,8 @@ export function heroSection(l,base){
    <div class="hero-topline"><span>PORTFOLIO / 2026</span><span><i class="status-dot" aria-hidden="true"></i> BASED IN INDONESIA</span></div>
    <div class="hero-grid">
     <div class="hero-copy">
-     <p class="eyebrow hero-eyebrow">${pick(l,'HALO, SAYA ARNOLDUS','HELLO, I’M ARNOLDUS')}</p>
-     <h1><span class="hero-line">${pick(l,'Di antara data,','Where data,')}</span> <span class="hero-line">${pick(l,'teknologi &','technology &')}</span> <span class="hero-line"><em>${pick(l,'manusia.','people meet.')}</em></span></h1>
+     <p class="eyebrow hero-eyebrow">${pick(l,'ARNOLDUS GRATIO DARRYL ANDYKA','ARNOLDUS GRATIO DARRYL ANDYKA')}</p>
+     <h1><span class="hero-line">${pick(l,'Teknologi,','Technology,')}</span> <span class="hero-line">${pick(l,'data &','data &')}</span> <span class="hero-line"><em>${pick(l,'perbankan.','banking.')}</em></span></h1>
      <p class="hero-intro">${profile.intro[l]}</p>
      <div class="hero-actions"><a class="button primary" href="#work">${pick(l,'Lihat proyek','Explore work')} <span aria-hidden="true">↗</span></a><a class="text-link" href="${root}profile/">${pick(l,'Lihat profil','View profile')} <span aria-hidden="true">↗</span></a></div>
     </div>
@@ -22,10 +23,10 @@ export function heroSection(l,base){
       <div class="portrait-photo"><img src="${base}assets/portrait.jpg" width="867" height="1280" alt="Arnoldus Gratio Darryl Andyka" fetchpriority="high"></div>
       <figcaption class="portrait-caption"><div><span class="eyebrow">ENGINEERING · AI · BANKING</span><p>Arnoldus Gratio<br>Darryl Andyka</p></div><span class="portrait-star" aria-hidden="true">✳</span></figcaption>
      </figure>
-     <p class="portrait-note"><span aria-hidden="true">↳</span> ${pick(l,'Rasa ingin tahu, jadi karya.','Curiosity, put into practice.')}</p>
+     <p class="portrait-note"><span aria-hidden="true">↳</span> ${pick(l,'Riset, analisis data, dan pengembangan aplikasi.','Research, data analysis, and application development.')}</p>
     </div>
    </div>
-   <div class="hero-bottom"><span>${pick(l,'Teknik Telekomunikasi','Telecommunication Engineering')}</span><span>Telkom University</span><a href="#connections">${pick(l,'Jelajahi lebih jauh','Explore further')} ↓</a></div>
+   <div class="hero-bottom"><span>${pick(l,'Teknik Telekomunikasi','Telecommunication Engineering')}</span><span>Telkom University</span><a href="#connections">${pick(l,'Lihat kompetensi','View expertise')} ↓</a></div>
   </div>
  </section>`;
 }
@@ -35,10 +36,10 @@ export function networkSection(l){
  const mobile=['M130 75V150Q130 190 170 190H240','M470 75V150Q470 190 430 190H360','M130 325V250Q130 210 170 210H240','M470 325V250Q470 210 430 210H360'];
  const lines=(arr,cls,box)=>`<svg class="circuit-lines ${cls}" viewBox="${box}" preserveAspectRatio="none" aria-hidden="true">${arr.map((d,i)=>`<path class="circuit-track" d="${d}"/><path class="circuit-pulse" d="${d}" pathLength="100" style="--delay:${i*-1.4}s"/>`).join('')}</svg>`;
  return `<section class="network-section" id="connections" data-motion-surface><div class="container">
-  <div class="network-heading" data-reveal><p class="eyebrow">${pick(l,'MENGHUBUNGKAN DISIPLIN','CONNECTING DISCIPLINES')}</p><h2>${pick(l,'Satu rasa ingin tahu.<br>Banyak kemungkinan.','One curious mind.<br>Many possibilities.')}</h2><p>${pick(l,'Fondasi engineering. Ketajaman data. Eksplorasi AI. Konteks perbankan.','An engineering foundation. A data perspective. AI exploration. Banking context.')}</p></div>
+  <div class="network-heading" data-reveal><p class="eyebrow">${pick(l,'BIDANG KOMPETENSI','AREAS OF EXPERTISE')}</p><h2>${pick(l,'Kompetensi lintas bidang','Multidisciplinary expertise')}</h2><p>${pick(l,'Rekayasa sistem, analisis data, dan pengembangan AI dalam konteks teknologi perbankan.','Systems engineering, data analysis, and AI development in the context of banking technology.')}</p></div>
   <div class="network-map" data-reveal>${lines(paths,'desktop-circuit','0 0 1000 360')}${lines(mobile,'mobile-circuit','0 0 600 400')}
-   <div class="network-hub"><span class="hub-mark" aria-hidden="true">a<span>.</span></span><strong>${pick(l,'Ide menjadi karya','Ideas into practice')}</strong></div>
-   <ul class="network-nodes"><li class="network-node node-engineering"><span class="node-symbol" aria-hidden="true">⌁</span><span>Engineering<small>${pick(l,'Memahami sistem','Understanding systems')}</small></span></li><li class="network-node node-data"><span class="node-symbol" aria-hidden="true">▥</span><span>Data<small>${pick(l,'Menemukan pola','Finding patterns')}</small></span></li><li class="network-node node-ai"><span class="node-symbol" aria-hidden="true">✳</span><span>AI<small>${pick(l,'Mengeksplorasi solusi','Exploring solutions')}</small></span></li><li class="network-node node-banking"><span class="node-symbol" aria-hidden="true">↗</span><span>Banking<small>${pick(l,'Memahami konteks','Understanding context')}</small></span></li></ul>
+   <div class="network-hub"><span class="hub-mark" aria-hidden="true">a<span>.</span></span><strong>${pick(l,'Integrasi Kompetensi','Integrated Expertise')}</strong></div>
+   <ul class="network-nodes"><li class="network-node node-engineering"><span class="node-symbol" aria-hidden="true">${disciplineIcon('engineering')}</span><span>Engineering<small>${pick(l,'Desain sistem','System design')}</small></span></li><li class="network-node node-data"><span class="node-symbol" aria-hidden="true">${disciplineIcon('data')}</span><span>Data<small>${pick(l,'Analisis data','Data analysis')}</small></span></li><li class="network-node node-ai"><span class="node-symbol" aria-hidden="true">${disciplineIcon('ai')}</span><span>AI<small>${pick(l,'Pengembangan AI','AI development')}</small></span></li><li class="network-node node-banking"><span class="node-symbol" aria-hidden="true">${disciplineIcon('banking')}</span><span>Banking<small>${pick(l,'Teknologi perbankan','Banking technology')}</small></span></li></ul>
   </div>
  </div></section>`;
 }
@@ -54,7 +55,7 @@ function staticGlobe(){
 
 export function globeSection(l,base){
  return `<section class="globe-section" data-motion-surface><div class="container globe-grid">
-  <div class="globe-copy" data-reveal><p class="eyebrow">${pick(l,'BERAWAL DARI KONEKSI','IT STARTS WITH CONNECTION')}</p><h2>${pick(l,'Memahami sistem.<br><em>Membuka perspektif.</em>','Understand systems.<br><em>Open new perspectives.</em>')}</h2><p>${pick(l,'Dari sinyal yang menghubungkan perangkat, hingga data yang membantu orang mengambil keputusan. Saya melihat teknologi sebagai cara untuk membangun hubungan yang lebih berarti.','From signals connecting devices to data helping people make decisions. I see technology as a way to build more meaningful connections.')}</p><a class="text-link" href="#experience">${pick(l,'Lihat perjalanan saya','Explore my journey')} <span aria-hidden="true">↗</span></a></div>
-  <div class="globe-stage"><div class="globe-halo" aria-hidden="true"></div><div class="globe-orbit" aria-hidden="true"></div><div class="globe-visual">${staticGlobe()}<canvas class="globe-canvas" data-points="${base}assets/globe-points.json" width="600" height="600" aria-hidden="true"></canvas></div><p class="globe-caption"><i class="status-dot" aria-hidden="true"></i>${pick(l,'Berbasis di Indonesia. Terbuka untuk ide baru.','Based in Indonesia. Open to new ideas.')}</p></div>
+  <div class="globe-copy" data-reveal><p class="eyebrow">${pick(l,'LATAR BELAKANG TEKNIS','TECHNICAL BACKGROUND')}</p><h2>${pick(l,'Telekomunikasi dan<br><em>teknologi digital.</em>','Telecommunications<br><em>and digital technology.</em>')}</h2><p>${pick(l,'Pengalaman saya mencakup pemrosesan sinyal, sistem berbasis sensor, analisis data, dan antarmuka aplikasi dalam proyek akademik, riset laboratorium, serta kegiatan OJT.','My experience covers signal processing, sensor-based systems, data analysis, and application interfaces through academic projects, laboratory research, and OJT.')}</p><a class="text-link" href="#experience">${pick(l,'Lihat pengalaman','View experience')} <span aria-hidden="true">↗</span></a></div>
+  <div class="globe-stage"><div class="globe-halo" aria-hidden="true"></div><div class="globe-orbit" aria-hidden="true"></div><div class="globe-visual">${staticGlobe()}<canvas class="globe-canvas" data-points="${base}assets/globe-points.json" width="600" height="600" aria-hidden="true"></canvas></div><p class="globe-caption"><i class="status-dot" aria-hidden="true"></i>${pick(l,'Indonesia · Engineering, AI & Banking Technology','Indonesia · Engineering, AI & Banking Technology')}</p></div>
  </div></section>`;
 }

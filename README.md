@@ -24,6 +24,8 @@ The production site has no runtime package dependencies, database, account syste
 - `content/projects.mjs`: six bilingual case studies, roles, deliverables and limitations.
 - `scripts/build.mjs`: page templates, metadata, sitemap and 404 pages.
 - `scripts/art.mjs`: original SVG project illustrations with sample/conceptual data.
+- `scripts/icons.mjs`: consistent line icons for engineering, data, AI and banking.
+- `scripts/social.mjs`: regenerates the professional social-sharing card with `node scripts/social.mjs` (requires a locally available Playwright browser).
 - `scripts/motion-sections.mjs`: hero, animated discipline network and static globe fallback.
 - `public/styles.css`: responsive visual system and print styles.
 - `public/app.js`: progressive enhancements for filters, mobile navigation and printing.
