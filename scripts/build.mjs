@@ -44,7 +44,7 @@ for(const l of ['id','en']){
  for(const q of projects){await save(prefix+`projects/${q.id}/`,detail(q,l));routes.push(root(l)+`projects/${q.id}/`);}
 }
 for(const l of ['id','en']){
- const html=page(l,'404.html',pick(l,'Halaman tidak ditemukan ? Arnoldus','Page not found ? Arnoldus'),pick(l,'Kembali ke portofolio Arnoldus.','Return to Arnoldus?s portfolio.'),`<main id="main" class="not-found container"><p class="eyebrow">ERROR / 404</p><h1>${pick(l,'Sepertinya<br>kita salah belok.','A little off<br>the beaten path.')}</h1><p>${pick(l,'Halaman ini tidak ditemukan. Mari kembali menjelajahi karya.','This page could not be found. Let?s get back to exploring the work.')}</p><a class="button primary" href="${root(l)}">${pick(l,'Kembali ke beranda','Back to home')}</a></main>`);
+ const html=page(l,'404.html',pick(l,'Halaman tidak ditemukan — Arnoldus','Page not found — Arnoldus'),pick(l,'Kembali ke portofolio Arnoldus.','Return to the portfolio of Arnoldus.'),`<main id="main" class="not-found container"><p class="eyebrow">ERROR / 404</p><h1>${pick(l,'Sepertinya<br>kita salah belok.','A little off<br>the beaten path.')}</h1><p>${pick(l,'Halaman ini tidak ditemukan. Mari kembali menjelajahi karya.','This page could not be found. Explore the work from the homepage.')}</p><a class="button primary" href="${root(l)}">${pick(l,'Kembali ke beranda','Back to home')}</a></main>`);
  await writeFile(path.join(out,l==='en'?'en/404.html':'404.html'),html);
 }
 await writeFile(path.join(out,'sitemap.xml'),`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${routes.map(r=>`<url><loc>${origin+r}</loc></url>`).join('')}</urlset>`);

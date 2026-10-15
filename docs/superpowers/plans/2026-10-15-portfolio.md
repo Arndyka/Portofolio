@@ -27,16 +27,16 @@
 ## Task 1: Content and site
 Files: content/profile.mjs, content/projects.mjs, scripts/build.mjs, public/styles.css, public/app.js, public/assets/portrait.png, scripts/serve.mjs, tests/site.spec.mjs, playwright.config.mjs, package.json.
 Interfaces: content exports profile and projects with en/id fields; build writes dist using BASE_PATH, default /Portofolio/; server serves that prefix.
-- [ ] Write browser tests: homepage/profile, English route, filters, all project detail links, locale continuity, mobile menu/Escape, 320/390/1440 widths, no-JS content and axe.
-- [ ] Run a homepage test before implementation and observe the missing page fail.
-- [ ] Curate bilingual content; create build templates and visual assets; implement CSS and JS.
-- [ ] Run npm run build and npm test; inspect screenshots and repair concrete defects.
-- [ ] Commit verified implementation.
+- [x] Write browser tests: homepage/profile, English route, filters, all project detail links, locale continuity, mobile menu/Escape, 320/390/1440 widths, no-JS content and axe.
+- [x] Run a homepage test before implementation and observe the missing page fail.
+- [x] Curate bilingual content; create build templates and visual assets; implement CSS and JS.
+- [x] Run npm run build and npm test; inspect screenshots and repair concrete defects.
+- [x] Commit verified implementation.
 
 ## Task 2: Publication
 Files: .github/workflows/deploy.yml, README.md, docs/verification.md.
 Interfaces: GitHub Actions builds and publishes dist; source and Pages use same commit.
-- [ ] Review entire change with a fresh reviewer; fix significant findings and run full checks.
-- [ ] Create minimal build-and-Pages workflow, document editing and content boundaries.
+- [x] Review entire change with a fresh reviewer; fix significant findings and run full checks.
+- [x] Create minimal build-and-Pages workflow, document editing and content boundaries.
 - [ ] Push approved source to main; enable Pages workflow via authenticated GitHub API.
 - [ ] Verify successful Actions deployment and fetch live home, English, project and asset URLs.
