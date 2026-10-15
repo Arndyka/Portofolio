@@ -1,20 +1,7 @@
 const L=(id,en)=>({id,en});
 export const projects=[
  {
-  id:'rabid',category:'ai',year:'2026',kind:'dashboard',number:'01',title:'RABID Dashboard',
-  subtitle:L('Dari risalah rapat ke tindak lanjut yang terstruktur.','From meeting minutes to structured follow-through.'),
-  summary:L('Dashboard untuk menelusuri risalah, arahan, dan tindak lanjut rapat, dengan dukungan pemrosesan dokumen dan integrasi AI.','A dashboard for exploring meeting minutes, directives, and follow-up actions, supported by document processing and AI integration.'),
-  context:L('PROYEK OJT · BANKING','OJT PROJECT · BANKING'),role:L('Pengembangan dashboard & integrasi AI','Dashboard development & AI integration'),
-  stack:['React','TypeScript','Node.js','Document processing','AI integration'],
-  challenge:L('Informasi rapat tersebar dalam dokumen, sementara arahan dan tindak lanjut perlu ditelusuri secara konsisten. Tantangannya adalah menyusun informasi tersebut menjadi tampilan yang membantu pembaca memahami konteks dan pekerjaan berikutnya.','Meeting information lives across documents, while directives and follow-up actions need consistent tracking. The challenge is to organize that information into a view that helps readers understand both the context and the next steps.'),
-  contribution:L('Mengembangkan aplikasi dashboard sebagai bagian dari karya OJT, dengan perhatian pada antarmuka, struktur informasi, alur pembacaan dokumen, dan integrasi AI.','Developed the dashboard application as part of OJT work, with attention to interface design, information structure, document-reading workflows, and AI integration.'),
-  approach:[L('Mengolah dokumen risalah menjadi data terstruktur yang dapat digunakan dashboard.','Process meeting documents into structured data for the dashboard.'),L('Menyajikan risalah, arahan, dan tindak lanjut dalam antarmuka React dan TypeScript.','Present meeting records, directives, and follow-up actions through a React and TypeScript interface.'),L('Menghubungkan server Node.js, autentikasi, dan layanan AI untuk mendukung alur penggunaan.','Connect the Node.js server, authentication, and AI services to support the workflow.')],
-  outputs:[L('Dashboard risalah, arahan, dan tindak lanjut','Dashboard for meeting records, directives, and follow-up'),L('Alur pemrosesan dokumen dan integrasi AI','Document-processing workflow and AI integration'),L('Dokumentasi pengembangan serta pemeriksaan aplikasi','Development documentation and application checks')],
-  reflection:L('Dashboard yang berguna dimulai dari struktur informasi yang jelas. AI menjadi pendukung proses, sementara sumber dan konteks dokumen tetap penting.','A useful dashboard starts with clear information structure. AI supports the process, while document sources and context remain essential.'),
-  boundary:L('Studi kasus ini merangkum kapabilitas aplikasi lokal. Visual merupakan ilustrasi dengan data contoh, bukan tangkapan layar atau data internal. Tidak mengklaim penggunaan produksi maupun dampak bisnis terukur.','This case study summarizes the local application capabilities. Visuals are illustrations with sample data, not internal screenshots or records. No production adoption or measured business impact is claimed.')
- },
- {
-  id:'pam',category:'ai',year:'2026',kind:'security',number:'02',title:'AI for PAM',
+  id:'pam',category:'ai',year:'2026',kind:'security',number:'01',title:'AI-Powered Access/session Monitoring',
   subtitle:L('Membuat analisis sesi lebih mudah ditelusuri.','Making session analysis easier to trace.'),
   summary:L('Antarmuka analisis sesi Privileged Access Management dengan risk scoring, command coverage, pemetaan MITRE, dan alur review.','A Privileged Access Management session-analysis interface with risk scoring, command coverage, MITRE mapping, and review workflows.'),
   context:L('PROYEK OJT · SECURITY','OJT PROJECT · SECURITY'),role:L('Pengembangan antarmuka & alur analisis','Interface development & analysis workflows'),
@@ -27,7 +14,7 @@ export const projects=[
   boundary:L('Visual menggunakan data contoh. Nilai skor ilustratif bukan penilaian keamanan sesungguhnya. Studi kasus tidak memuat log, identitas pengguna, alamat jaringan, atau konfigurasi internal.','Visuals use sample data. Illustrative scores are not actual security assessments. This case study contains no logs, user identities, network addresses, or internal configuration.')
  },
  {
-  id:'radar',category:'engineering',year:'2025',kind:'radar',number:'03',title:'RiverSense · FMCW Radar',
+  id:'radar',category:'engineering',year:'2025',kind:'radar',number:'02',title:'RiverSense · FMCW Radar',
   subtitle:L('Membaca aliran sungai, tanpa menyentuh air.','Reading river flow without touching the water.'),
   summary:L('Capstone kelompok: sistem estimasi debit air sungai berbasis radar FMCW, Raspberry Pi, Supabase, dan dashboard web untuk mendukung mitigasi dini banjir.','A team capstone: river discharge estimation using FMCW radar, Raspberry Pi, Supabase, and a web dashboard to support early flood mitigation.'),
   context:L('CAPSTONE · PROYEK KELOMPOK','CAPSTONE · TEAM PROJECT'),role:L('Pengumpulan & analisis data, visualisasi, desain perangkat','Data collection & analysis, visualization, hardware design'),
@@ -40,7 +27,7 @@ export const projects=[
   boundary:L('“RiverSense” adalah nama tampilan untuk portofolio. Judul akademik: Sistem Estimasi Debit Air Sungai Berbasis Radar untuk Mendukung Mitigasi Dini Banjir. Hasil merupakan kerja tim; grafik hanya ilustrasi, bukan data pengujian.','“RiverSense” is a portfolio display name. Academic title: Radar-Based River Water Discharge Estimation System to Support Early Flood Mitigation. Deliverables are team work; charts are illustrative, not experimental data.')
  },
  {
-  id:'stunting',category:'data',year:'AKADEMIK',kind:'data',number:'04',title:'Stunting Monitoring',
+  id:'stunting',category:'data',year:'AKADEMIK',kind:'data',number:'03',title:'Stunting Monitoring',
   subtitle:L('Menyusun data menjadi pandangan yang lebih jelas.','Turning data into a clearer view.'),
   summary:L('Dashboard web untuk pemantauan, analisis, dan eksplorasi prediksi tren stunting dengan layanan cloud serta integrasi API.','A web dashboard for monitoring, analysis, and exploration of stunting trend prediction using cloud services and API integration.'),
   context:L('PROYEK AKADEMIK · DATA','ACADEMIC PROJECT · DATA'),role:L('Data collector, analyst & visualizer','Data collector, analyst & visualizer'),
@@ -53,7 +40,7 @@ export const projects=[
   boundary:L('Ringkasan berdasarkan CV dan portofolio pribadi. Tidak menyatakan validasi klinis, akurasi prediksi, atau penggunaan oleh institusi kesehatan. Grafik menggunakan data contoh.','Summary based on the personal CV and portfolio. It does not claim clinical validation, prediction accuracy, or adoption by a healthcare institution. Charts use sample data.')
  },
  {
-  id:'iot-curtain',category:'engineering',year:'2025',kind:'iot',number:'05',title:'Smart Curtain',
+  id:'iot-curtain',category:'engineering',year:'2025',kind:'iot',number:'04',title:'Smart Curtain',
   subtitle:L('Cahaya alami, kendali yang adaptif.','Natural light, adaptive control.'),
   summary:L('Proyek kelompok kendali tirai otomatis menggunakan ESP32, sensor LDR dan DHT22, motor servo, serta monitoring dan kontrol melalui Blynk.','A team project for automated curtain control using ESP32, LDR and DHT22 sensors, a servo motor, and Blynk monitoring and control.'),
   context:L('MIKROPROSESOR & IOT · KELOMPOK','MICROPROCESSORS & IOT · TEAM'),role:L('Anggota tim pengembangan sistem','System development team member'),
@@ -66,7 +53,7 @@ export const projects=[
   boundary:L('Prototipe akademik untuk satu jendela dan satu ruangan. Tidak mengklaim penghematan energi terukur. Diagram merupakan ilustrasi arsitektur sistem.','An academic prototype for one window and one room. No measured energy savings are claimed. The diagram illustrates the system architecture.')
  },
  {
-  id:'antenna',category:'engineering',year:'2023 — 2026',kind:'antenna',number:'06',title:'Antenna & RF Research',
+  id:'antenna',category:'engineering',year:'2023 — 2026',kind:'antenna',number:'05',title:'Antenna & RF Research',
   subtitle:L('Dari simulasi elektromagnetik ke prototipe.','From electromagnetic simulation to prototypes.'),
   summary:L('Eksplorasi desain antena, simulasi, fabrikasi, dan validasi eksperimental selama menjadi asisten riset di Antenna Laboratory, Telkom University.','Antenna design exploration, simulation, fabrication, and experimental validation as a research assistant at Telkom University’s Antenna Laboratory.'),
   context:L('LABORATORIUM · RISET','LABORATORY · RESEARCH'),role:L('Asisten riset antena','Antenna research assistant'),
@@ -79,20 +66,7 @@ export const projects=[
   boundary:L('Studi kasus merangkum pengalaman laboratorium, bukan klaim hasil satu desain tertentu. Diagram pola radiasi bersifat konseptual. Tidak ada klaim penghargaan kompetisi.','This case study summarizes laboratory experience, not the results of one specific design. The radiation pattern is conceptual. No competition awards are claimed.')
  },
  {
-  id:'kopra',category:'ai',year:'2026',kind:'knowledge',number:'07',title:'Kopra Knowledge Preparation',
-  subtitle:L('Menata pengetahuan sebelum membangun asisten.','Organizing knowledge before building an assistant.'),
-  summary:L('Penyiapan materi pengetahuan Kopra dari panduan produk dan materi onboarding sebagai fondasi eksplorasi asisten berbasis AI.','Preparation of Kopra knowledge materials from product guides and onboarding resources as a foundation for AI assistant exploration.'),
-  context:L('PROYEK OJT · KNOWLEDGE PREPARATION','OJT PROJECT · KNOWLEDGE PREPARATION'),role:L('Penyiapan & pengorganisasian materi','Material preparation & organization'),
-  stack:['Knowledge organization','Product documentation','Onboarding','AI preparation'],
-  challenge:L('Asisten berbasis AI membutuhkan materi yang terorganisasi dan sesuai konteks pengguna. Tahap persiapan berfokus pada pengelompokan sumber produk dan onboarding yang dapat mendukung pengembangan berikutnya.','An AI assistant needs organized materials that match user context. The preparation stage focuses on grouping product and onboarding sources to support later development.'),
-  contribution:L('Menyusun bahan dalam ruang kerja Kopra Assistant, termasuk kelompok product knowledge dan implementor onboarding, materi PDF, transkrip, serta inventaris pengetahuan.','Organized materials in the Kopra Assistant workspace, including product knowledge and implementor onboarding groups, PDFs, transcripts, and a knowledge inventory.'),
-  approach:[L('Mengidentifikasi panduan produk dan materi onboarding yang tersedia.','Identify available product guides and onboarding materials.'),L('Mengelompokkan sumber berdasarkan tujuan dan topik penggunaannya.','Group sources by purpose and subject.'),L('Menyiapkan struktur materi untuk eksplorasi pemrosesan pengetahuan selanjutnya.','Prepare the material structure for subsequent knowledge-processing exploration.')],
-  outputs:[L('Kelompok materi product knowledge','Product knowledge material groups'),L('Kelompok materi implementor onboarding','Implementor onboarding material groups'),L('Inventaris sumber pengetahuan','Knowledge source inventory')],
-  reflection:L('Kualitas pengalaman asisten dimulai sebelum model dipanggil: sumber yang jelas dan materi yang terstruktur membantu menjaga relevansi jawaban.','Assistant experience starts before a model is called: clear sources and structured materials help support relevant answers.'),
-  boundary:L('Tahap yang ditampilkan adalah persiapan pengetahuan. Tidak mengklaim chatbot, pencarian retrieval, atau pipeline embedding sudah berjalan. Materi internal tidak dipublikasikan.','The stage presented is knowledge preparation. It does not claim an operational chatbot, retrieval system, or embedding pipeline. Internal materials are not published.')
- },
- {
-  id:'practicum',category:'leadership',year:'2025 — 2026',kind:'lab',number:'08',title:'Transmission Lab Practicum',
+  id:'practicum',category:'leadership',year:'2025 — 2026',kind:'lab',number:'06',title:'Transmission Lab Practicum',
   subtitle:L('Membuat konsep teknis lebih mudah dipelajari.','Making technical concepts easier to learn.'),
   summary:L('Penyusunan skema, modul, dan aktivitas praktikum dasar transmisi, disertai koordinasi tim dan pendampingan mahasiswa.','Development of basic transmission practicum schemes, modules, and activities, alongside team coordination and student guidance.'),
   context:L('LABORATORIUM · LEADERSHIP','LABORATORY · LEADERSHIP'),role:L('Koordinator Divisi Praktikum','Practicum Division Coordinator'),

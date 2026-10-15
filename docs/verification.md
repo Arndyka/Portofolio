@@ -2,6 +2,14 @@
 
 Date: 15 October 2026 (Asia/Jakarta).
 
+## Public content and illustration correction
+
+- Removed two withdrawn case studies from the current source and every generated locale, profile, next-project link and sitemap entry. Generalized the related experience description. Historical Git commits are not rewritten by this change.
+- The remaining security project is titled **AI-Powered Access/session Monitoring**. Six projects are numbered consecutively and filter totals are generated from the content collection.
+- Centered the illustrative score and caption on the gauge axis. Tilted the radar with a theta angle measured from vertical and a leftward flow arrow opposing the beam's horizontal direction. Connected the RF module's bottom edge to the instrument cable.
+- All 21 Playwright checks passed, including a new publication check that scans generated text and verifies withdrawn routes return 404. Built 16 localized content pages and 2 error pages.
+- Visually inspected all three diagrams at detail-page size and the renamed project on a phone viewport.
+
 ## Animated visual refresh
 
 - Retained navy/teal, enlarged body text to 16–18 px and UI labels to at least 14 px, and rebuilt responsive spacing and cards.

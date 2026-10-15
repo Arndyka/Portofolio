@@ -21,7 +21,7 @@ The production site has no runtime package dependencies, database, account syste
 ## Edit content
 
 - `content/profile.mjs`: biography, contact links, experience, education, skills, learning.
-- `content/projects.mjs`: eight bilingual case studies, roles, deliverables and limitations.
+- `content/projects.mjs`: six bilingual case studies, roles, deliverables and limitations.
 - `scripts/build.mjs`: page templates, metadata, sitemap and 404 pages.
 - `scripts/art.mjs`: original SVG project illustrations with sample/conceptual data.
 - `scripts/motion-sections.mjs`: hero, animated discipline network and static globe fallback.
@@ -47,7 +47,7 @@ Pushes to `main` trigger `.github/workflows/deploy.yml`. It installs development
 
 ## Content boundaries
 
-Descriptions are curated from the owner's supplied professional materials and project documentation. Project graphics are original illustrative diagrams, not internal screenshots or measured outcomes. Workplace data, credentials, source documents, identity documents and personal addresses are not included. Group projects identify the owner's role. Kopra is described as knowledge preparation, not a deployed assistant. Azure AI-900 preparation is course completion, not Microsoft certification. The profile page can be printed or saved as PDF without distributing the original private CV files.
+Descriptions are curated from the owner's supplied professional materials and project documentation. Project graphics are original illustrative diagrams, not internal screenshots or measured outcomes. Workplace data, credentials, source documents, identity documents and personal addresses are not included. Group projects identify the owner's role. Azure AI-900 preparation is course completion, not Microsoft certification. The profile page can be printed or saved as PDF without distributing the original private CV files.
 
 Personal portrait and portfolio content remain the owner's materials. Manrope and Instrument Serif use the SIL Open Font License; license files are included beside the fonts.
 
