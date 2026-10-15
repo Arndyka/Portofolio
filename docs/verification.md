@@ -2,6 +2,12 @@
 
 Date: 15 October 2026 (Asia/Jakarta).
 
+## Project illustration animation
+
+- Stunting's illustrative chart line, filled area and markers move together. Curtain panels open and meet in the middle when closed. The instrument waveform flows within its display, and the teal antenna pattern rotates and changes scale around the fixed origin.
+- SVG drawings remain available without JavaScript. One animation clock updates visible illustrations at approximately 30 fps, freezes for user pause, reduced-motion, hidden tabs and print, and suspends offscreen scenes.
+- All 26 browser tests passed, including new checks of each illustration's changing geometry, paused/reduced-motion stability, and offscreen suspension/resumption.
+
 ## Public content and illustration correction
 
 - Removed two withdrawn case studies from the current source and every generated locale, profile, next-project link and sitemap entry. Generalized the related experience description. Historical Git commits are not rewritten by this change.

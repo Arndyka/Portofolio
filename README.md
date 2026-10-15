@@ -28,6 +28,7 @@ The production site has no runtime package dependencies, database, account syste
 - `public/styles.css`: responsive visual system and print styles.
 - `public/app.js`: progressive enhancements for filters, mobile navigation and printing.
 - `public/motion.js` and `public/globe.js`: scroll reveals, persistent pause control and rotating canvas globe.
+- `public/illustrations.js`: synchronized chart paths/dots, opening curtains, flowing instrument waveform and rotating teal antenna pattern, using a shared clock for visible SVGs.
 - `public/assets/`: supplied portrait, locally hosted fonts with their licenses, favicon and social image.
 
 Every localized content field has `id` and `en` values. After edits, run `npm run build` and `npm test` before pushing. Build output in `dist/` is ignored by Git and generated in CI. `BASE_PATH` can override the default `/Portofolio/` for other hosting setups; the canonical origin is configured in the builder.

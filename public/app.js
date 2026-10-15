@@ -1,5 +1,6 @@
 import { initializeMotion } from './motion.js';
 import { initializeGlobe } from './globe.js';
+import { initializeIllustrations } from './illustrations.js';
 document.documentElement.classList.add('js');
 const menu=document.querySelector('.menu-toggle');
 const nav=document.querySelector('#main-nav');
@@ -24,6 +25,7 @@ for(const button of filters)button.addEventListener('click',()=>{
 document.querySelector('.print-button')?.addEventListener('click',()=>window.print());
 const motion = initializeMotion();
 initializeGlobe(document.querySelector('.globe-canvas'), motion);
+initializeIllustrations(motion);
 const header = document.querySelector('.site-header');
 function updateHeader(){header?.classList.toggle('is-scrolled',window.scrollY>64);}
 addEventListener('scroll',updateHeader,{passive:true});
