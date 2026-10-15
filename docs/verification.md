@@ -9,6 +9,9 @@ Date: 15 October 2026 (Asia/Jakarta).
 - Centered the illustrative score and caption on the gauge axis. Tilted the radar with a theta angle measured from vertical and a leftward flow arrow opposing the beam's horizontal direction. Connected the RF module's bottom edge to the instrument cable.
 - All 21 Playwright checks passed, including a new publication check that scans generated text and verifies withdrawn routes return 404. Built 16 localized content pages and 2 error pages.
 - Visually inspected all three diagrams at detail-page size and the renamed project on a phone viewport.
+- Independent read-only review found no blocking defects. The final theta annotation was additionally placed inside its angle arc with a background outline for clear separation from moving rays.
+- Deployed source: `65dd2b36f5256d4ab66e4d3132ac941ee15ec733`; [successful build and deployment](https://github.com/Arndyka/Portofolio/actions/runs/38709319568).
+- Verified all 32 current public files match the local build and all four withdrawn localized URLs return HTTP 404. Historical Git commits and third-party caches are outside this current-site removal.
 
 ## Animated visual refresh
 
