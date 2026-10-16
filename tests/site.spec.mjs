@@ -50,8 +50,7 @@ for(const width of [320,390,768,1440])test(`pages fit ${width}px viewport`,async
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
  }
 });
-test('semantic pages meet automated accessibility checks',async({page})=>{
- for(const route of ['', 'en/', 'projects/pam/','profile/']){
+for(const route of ['', 'en/', 'projects/pam/','profile/'])test(`semantic page ${route||'home'} meets automated accessibility checks`,async({page})=>{
   await page.goto(home+route);
   // Reveal each section as a visitor scrolls, then audit settled text colors.
   for (const element of await page.locator('[data-reveal]').all()) await element.scrollIntoViewIfNeeded();
@@ -59,7 +58,6 @@ test('semantic pages meet automated accessibility checks',async({page})=>{
   await page.evaluate(() => document.fonts.ready);
   const result=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa']).analyze();
   expect(result.violations).toEqual([]);
- }
 });
 test('no JavaScript still exposes all work and usable navigation',async({browser})=>{
  const context=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:844}});

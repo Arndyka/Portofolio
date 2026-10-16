@@ -9,3 +9,5 @@ Evidence for Spendly and Date Planner came from the owner's current README, impl
 Local validation: production generation creates 22 localized pages plus two error pages. Existing baseline: 30 tests passed before changes. Expanded tests cover the new cases and demo/source links in both languages, phone/desktop overflow and automated accessibility, while retaining original filters, animation, keyboard, print, no-JavaScript and publication-boundary checks. Review found literal question marks in new external-link labels; those were replaced with the established arrow.
 
 No confidential workplace data, private statement, account credential, couple-space record or real-user screenshot is part of the change. Publication is through the existing GitHub Pages Actions workflow; live success is recorded after the workflow finishes.
+
+The expanded full suite initially reached the old 30-second limit while auditing four pages inside one test. No accessibility violation was reported. The same assertions were separated by route; new-case checks were also separated by case and viewport for clear diagnostics and per-page time budgets.
