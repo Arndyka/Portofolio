@@ -1,24 +1,25 @@
 import { test, expect } from '@playwright/test';
 
-const illustrations=[['stunting','.chart-line','d'],['iot-curtain','.curtain-left','transform'],['antenna','.rf-main-lobe','d'],['pam','.risk-ring','stroke-dasharray'],['practicum','.lab-wave','d']];
+const illustrations=[['stunting','.chart-line','d'],['iot-curtain','.curtain-left','transform'],['antenna','.rf-main-lobe','d'],['pam','.risk-ring','stroke-dasharray'],['practicum','.lab-wave','d'],['retail','.app-bar','height'],['spendly','.app-progress','width'],['date-planner','.planner-selection','transform']];
 for(const [slug,selector,attribute] of illustrations) test(`${slug} illustration moves and respects pause and reduced motion`,async({page})=>{
  await page.goto('/Portofolio/projects/'+slug+'/');
  const figure=page.locator('.case-figure');await figure.scrollIntoViewIfNeeded();
- const moving=figure.locator(selector);await expect(moving).toHaveCount(1);
- const initial=await moving.getAttribute(attribute);
- await expect.poll(()=>moving.getAttribute(attribute)).not.toBe(initial);
+ const moving=figure.locator(selector);expect(await moving.count()).toBeGreaterThan(0);
+ const snapshot=()=>moving.evaluateAll((nodes,attribute)=>nodes.map(node=>node.getAttribute(attribute)).join('|'),attribute);
+ const initial=await snapshot();
+ await expect.poll(snapshot).not.toBe(initial);
  await page.getByRole('button',{name:'Jeda animasi',exact:true}).click();
  await expect(page.getByRole('button',{name:'Putar animasi',exact:true})).toHaveAttribute('aria-pressed','true');
- const paused=await moving.getAttribute(attribute);
+ const paused=await snapshot();
  await page.waitForTimeout(150);
- expect(await moving.getAttribute(attribute)).toBe(paused);
+ expect(await snapshot()).toBe(paused);
  await page.getByRole('button',{name:'Putar animasi',exact:true}).click();
- await expect.poll(()=>moving.getAttribute(attribute)).not.toBe(paused);
+ await expect.poll(snapshot).not.toBe(paused);
  await page.emulateMedia({reducedMotion:'reduce'});
  await expect(page.getByRole('button',{name:'Gerakan dikurangi sesuai pengaturan perangkat'})).toBeDisabled();
- const reduced=await moving.getAttribute(attribute);
+ const reduced=await snapshot();
  await page.waitForTimeout(150);
- expect(await moving.getAttribute(attribute)).toBe(reduced);
+ expect(await snapshot()).toBe(reduced);
 });
 
 test('card illustrations stop updating offscreen and resume when visible',async({page})=>{

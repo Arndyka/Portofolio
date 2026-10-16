@@ -37,3 +37,40 @@ export function monitoringFrame(time) {
   const components = from.map((value,index) => Math.round(value + (to[index] - value) * progress));
   return {components, total:Math.round(components.reduce((sum,value) => sum + value,0) / components.length)};
 }
+
+// Sequential illustrative retail updates, anchored to the same baseline.
+export function retailFrame(time) {
+  const snapshots = [
+    [70,108,95,140,165,185],
+    [95,82,120,166,138,172],
+    [62,118,87,130,178,150],
+  ];
+  const step = Math.floor(time / 3.2), active = step % 6;
+  const cycle = Math.floor(step / 6) % snapshots.length;
+  const from = snapshots[cycle], to = snapshots[(cycle + 1) % snapshots.length];
+  const progress = smooth(Math.min(1, (time % 3.2) / 2.4));
+  return from.map((value,index) => index < active ? to[index] : index === active ? value + (to[index] - value) * progress : value);
+}
+
+// A fixed demo limit keeps the displayed amount and progress meaningful.
+export function budgetFrame(time) {
+  const snapshots = [3200000,2400000,3600000,2800000];
+  const step = Math.floor(time / 5);
+  const from = snapshots[step % snapshots.length], to = snapshots[(step + 1) % snapshots.length];
+  const progress = smooth(Math.min(1, (time % 5) / 3.5));
+  const remaining = Math.round((from + (to - from) * progress) / 10000) * 10000;
+  return {remaining, limit:4000000};
+}
+
+// Hold on a date before easing the selection and its check to the next cell.
+export function plannerFrame(time) {
+  const cells = [[2,1],[3,1],[3,0],[1,0],[1,2],[2,2]];
+  const step = Math.floor(time / 4);
+  const from = cells[step % cells.length], to = cells[(step + 1) % cells.length];
+  const progress = smooth(Math.max(0, Math.min(1, (time % 4 - 1.8) / 1.2)));
+  return {
+    x:119 + 73 * (from[0] + (to[0] - from[0]) * progress),
+    y:132 + 45 * (from[1] + (to[1] - from[1]) * progress),
+    checkOpacity:1 - .8 * Math.sin(progress * Math.PI),
+  };
+}

@@ -31,7 +31,7 @@ The production site has no runtime package dependencies, database, account syste
 - `public/styles.css`: responsive visual system and print styles.
 - `public/app.js`: progressive enhancements for filters, mobile navigation and printing.
 - `public/motion.js` and `public/globe.js`: scroll reveals, persistent pause control and rotating canvas globe.
-- `public/illustrations.js`: sequential chart updates, opening curtains, flowing instrument waveform, a fixed single RF main lobe that narrows as it strengthens and broadens as it weakens and synchronized demo risk scores, using a shared clock for visible SVGs.
+- `public/illustrations.js`: sequential chart updates, opening curtains, flowing instrument waveform, a fixed single RF main lobe that narrows as it strengthens and broadens as it weakens, synchronized demo risk scores, retail bars, budget progress and calendar selection, using a shared clock for visible SVGs.
 - `public/illustration-frames.js`: deterministic chart and monitoring frames. The demo total is the rounded mean of the four visible component scores; this is illustrative, not an actual scoring policy.
 - `public/assets/`: supplied portrait, locally hosted fonts with their licenses, favicon and social image.
 
@@ -63,5 +63,7 @@ Personal portrait and portfolio content remain the owner's materials. Manrope an
 The navy/teal refresh uses the owner's attached color portrait (`portrait.jpg`), 16–18 px body text and labels of at least 14 px. Glowing paths, staged text entrances, a rotating dotted globe and scroll transitions adapt the movement of the supplied Pinterest reference to the portfolio's own content.
 
 The header's pause button saves the visitor's preference. Device reduced-motion settings take priority. Continuous effects pause outside the viewport or while the page is hidden. Without JavaScript, every section remains visible and the globe has an SVG fallback. Tests check these behaviors as well as both locales and mobile layouts.
+
+Project cards use three columns at viewport widths of 1200 CSS pixels and above, two from 701 to 1199, and one at 700 or below. Browser zoom naturally reduces the available CSS viewport width. Card body text remains at least 16 px. RetailLens updates one bar at a time; Spendly synchronizes its illustrative remaining amount with a fixed Rp4,000,000 demo limit; Date Planner moves its highlight and check together between calendar cells. These illustrations also follow the shared pause, reduced-motion, offscreen and print controls.
 
 Globe land points are sampled from [Natural Earth 1:110m land geometry](https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_land.geojson), available in the [public domain](https://www.naturalearthdata.com/about/terms-of-use/). No third-party video or branding is distributed with this site.

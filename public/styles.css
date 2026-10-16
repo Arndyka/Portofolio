@@ -116,7 +116,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #347c69;outline-offset:5p
 .filters button:hover{border-color:#386a5b}
 .filters button>span{font-size:14px;margin-left:8px;opacity:.8}
 #project-count{font-size:14px;white-space:nowrap;color:var(--muted)}
-.projects-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:stretch}
+.projects-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;align-items:stretch}
 .project-card{min-width:0;border:1px solid #cdd8d0;border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 2px 8px #163a2f03}
 .project-card>a{display:flex;flex-direction:column;height:100%}
 .project-card>a:focus-visible{outline-offset:-5px}
@@ -124,9 +124,9 @@ button:focus-visible,a:focus-visible{outline:3px solid #347c69;outline-offset:5p
 .project-visual>svg{width:100%;height:auto}
 .project-index{position:absolute;top:14px;left:18px;font-size:14px;font-weight:600;color:#c3dfdf}
 .card-arrow{position:absolute;right:18px;bottom:18px;display:grid;place-items:center;border:1px solid #6c9992;border-radius:50%;width:44px;height:44px;background:#173a46;color:var(--teal);font-size:26px;line-height:1}
-.project-copy{padding:28px;display:flex;flex-direction:column;flex:1}
+.project-copy{padding:24px;display:flex;flex-direction:column;flex:1}
 .project-copy .eyebrow{font-size:14px;letter-spacing:.35px;line-height:1.6;color:var(--muted);display:flex;gap:10px 16px;flex-wrap:wrap;justify-content:space-between}
-.project-copy h3{font-size:28px;margin-top:15px;margin-bottom:12px;letter-spacing:-.8px;text-wrap:pretty}
+.project-copy h3{font-size:26px;margin-top:15px;margin-bottom:12px;letter-spacing:-.8px;text-wrap:pretty;overflow-wrap:anywhere}
 .project-copy>p{font-size:16px;color:var(--muted);line-height:1.75}
 .card-tech{display:flex;flex-wrap:wrap;gap:4px 9px;font-size:14px;color:#45645f;line-height:1.7;margin-top:auto;padding-top:24px}
 .card-tech>span{color:#70867f}
@@ -317,6 +317,13 @@ button:focus-visible,a:focus-visible{outline:3px solid #347c69;outline-offset:5p
 @keyframes gauge-breathe{from{stroke-dashoffset:0}to{stroke-dashoffset:28}}
 @keyframes dot-breathe{from{opacity:.55}to{opacity:1}}
 
+@media(min-width:1200px){
+ .project-copy .eyebrow{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:start;min-height:3.2em;column-gap:12px}
+ .project-copy h3{min-height:2.4em}
+}
+@media(max-width:1199px){
+ .projects-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
 @media(max-width:1100px){
  .container{width:calc(100% - 64px)}
  .header-inner{gap:20px}#main-nav{gap:22px}#main-nav a{font-size:14px}

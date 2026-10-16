@@ -1,5 +1,34 @@
 import {test,expect} from '@playwright/test';
-import {chartFrame,monitoringFrame} from '../public/illustration-frames.js';
+import {chartFrame,monitoringFrame,retailFrame,plannerFrame} from '../public/illustration-frames.js';
+
+test('retail bars update individually without jumping or entering the heading',()=>{
+ for(let time=0;time<60;time+=.1){
+  const before=retailFrame(time),after=retailFrame(time+.03);
+  const deltas=after.map((height,i)=>Math.abs(height-before[i]));
+  expect(deltas.filter(delta=>delta>.00001).length).toBeLessThanOrEqual(1);
+  expect(Math.max(...deltas)).toBeLessThan(1);
+  after.forEach((height,i)=>{
+   expect(height).toBeGreaterThanOrEqual(50);
+   expect(height).toBeLessThanOrEqual(i<3?130:190);
+  });
+ }
+});
+
+test('planner selection holds on calendar cells and loops without jumps',()=>{
+ const start=plannerFrame(0);
+ expect(plannerFrame(1.5)).toEqual(start);
+ expect(plannerFrame(24)).toEqual(start);
+ for(let time=0;time<24;time+=.03){
+  const frame=plannerFrame(time),next=plannerFrame(time+.03);
+  expect(frame.x).toBeGreaterThanOrEqual(119);expect(frame.x+52).toBeLessThanOrEqual(507);
+  expect(frame.y).toBeGreaterThanOrEqual(132);expect(frame.y+30).toBeLessThanOrEqual(281);
+  expect(Math.hypot(next.x-frame.x,next.y-frame.y)).toBeLessThan(6);
+ }
+ for(const time of [0,4,8,12,16,20]){
+  const {x,y,checkOpacity}=plannerFrame(time);
+  expect((x-119)%73).toBe(0);expect((y-132)%45).toBe(0);expect(checkOpacity).toBeCloseTo(1);
+ }
+});
 
 test('chart observations update one at a time with bounded smooth movement',()=>{
  for(let time=0;time<100;time+=.1){

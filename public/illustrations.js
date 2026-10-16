@@ -1,10 +1,36 @@
-import { chartFrame, monitoringFrame, radiationFrame } from './illustration-frames.js';
+import { chartFrame, monitoringFrame, radiationFrame, retailFrame, budgetFrame, plannerFrame } from './illustration-frames.js';
 
 // One lightweight clock for visible illustrations. SVG remains useful without JS.
 export function initializeIllustrations(motion) {
   const scenes = [...document.querySelectorAll('[data-animated-art]')].map(svg => {
     const kind = svg.dataset.animatedArt;
     const find = selector => svg.querySelector(selector);
+    if (kind === 'retail') {
+      const bars=[...svg.querySelectorAll('.app-bar')];
+      return {svg, draw(time) {
+        retailFrame(time).forEach((height,index) => {
+          bars[index].setAttribute('height',height.toFixed(2));
+          bars[index].setAttribute('y',(254 - height).toFixed(2));
+        });
+      }};
+    }
+    if (kind === 'spendly') {
+      const amount=find('.budget-amount'), progress=find('.app-progress');
+      const format=new Intl.NumberFormat('id-ID');
+      return {svg, draw(time) {
+        const {remaining,limit}=budgetFrame(time);
+        amount.textContent='Rp'+format.format(remaining);
+        progress.setAttribute('width',(170 * remaining / limit).toFixed(2));
+      }};
+    }
+    if (kind === 'planner') {
+      const selection=find('.planner-selection'), check=find('.planner-check');
+      return {svg, draw(time) {
+        const {x,y,checkOpacity}=plannerFrame(time);
+        selection.setAttribute('transform',`translate(${x.toFixed(2)} ${y.toFixed(2)})`);
+        check.setAttribute('opacity',checkOpacity.toFixed(3));
+      }};
+    }
     if (kind === 'data') {
       const line = find('.chart-line'), area = find('.chart-area');
       const dots = [...svg.querySelectorAll('.chart-dot')];
