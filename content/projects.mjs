@@ -1,3 +1,4 @@
+import { additions } from './personal-projects.mjs';
 const L=(id,en)=>({id,en});
 export const projects=[
  {
@@ -78,4 +79,5 @@ export const projects=[
   reflection:L('Saya mengembangkan kemampuan memimpin tim, membagi pekerjaan, dan merencanakan aktivitas praktikum. Pendampingan mahasiswa juga memperkuat kemampuan menjelaskan konsep transmisi dan RF serta menyusun instruksi teknis yang dapat diikuti.','I developed skills in team leadership, task coordination, and practicum planning. Supporting students also strengthened my ability to explain transmission and RF concepts and write technical instructions that others can follow.'),
   boundary:L('Ringkasan didasarkan pada CV dan materi laboratorium. Tidak mengklaim peningkatan hasil belajar kuantitatif yang belum diukur.','This summary is based on the CV and laboratory materials. It does not claim unmeasured quantitative improvements in learning outcomes.')
  }
+ ,...additions
 ];

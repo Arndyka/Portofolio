@@ -60,6 +60,6 @@ test('scroll transitions never hide keyboard targets or no-JS content',async({br
  const fallback=await context.newPage();await fallback.goto('http://127.0.0.1:4185'+home);
  await expect(fallback.locator('.network-section')).toBeVisible();
  await expect(fallback.locator('.globe-fallback')).toBeVisible();
- await expect(fallback.locator('.project-card')).toHaveCount(6);
+ await expect(fallback.locator('.project-card')).toHaveCount(9);
  await context.close();
 });

@@ -4,7 +4,7 @@ const home='/Portofolio/';
 test('home introduces the owner and real content without console errors',async({page})=>{
  const errors=[];page.on('pageerror',e=>errors.push(e.message));
  await page.goto(home);await expect(page.locator('h1')).toContainText('Teknologi');
- await expect(page.locator('.project-card')).toHaveCount(6);
+ await expect(page.locator('.project-card')).toHaveCount(9);
  await expect(page.getByRole('link',{name:'Email Arnoldus'})).toHaveAttribute('href','mailto:arnolduzandy123@gmail.com');
  expect(errors).toEqual([]);
 });
@@ -14,12 +14,12 @@ test('filters show matching projects and restore the whole collection',async({pa
  await expect(page.getByRole('button',{name:'AI & Banking',exact:true})).toHaveAttribute('aria-pressed','true');
  await expect(page.locator('#project-count')).toContainText('1');
  await page.getByRole('button',{name:'Semua',exact:true}).click();
- await expect(page.locator('.project-card:visible')).toHaveCount(6);
+ await expect(page.locator('.project-card:visible')).toHaveCount(9);
 });
 test('each case study and locale counterpart is reachable',async({page})=>{
  await page.goto(home);
  const links=await page.locator('.project-card > a').evaluateAll(a=>a.map(x=>x.href));
- expect(links.length).toBe(6);
+ expect(links.length).toBe(9);
  for(const href of links){
   const res=await page.goto(href);expect(res.status()).toBe(200);
   await expect(page.locator('h1')).toBeVisible();
@@ -64,7 +64,7 @@ test('semantic pages meet automated accessibility checks',async({page})=>{
 test('no JavaScript still exposes all work and usable navigation',async({browser})=>{
  const context=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:844}});
  const page=await context.newPage();await page.goto('http://127.0.0.1:4185'+home);
- await expect(page.locator('.project-card')).toHaveCount(6);
+ await expect(page.locator('.project-card')).toHaveCount(9);
  await expect(page.locator('#main-nav').getByRole('link',{name:'Proyek',exact:true})).toBeVisible();
  await page.locator('.project-card > a').first().click();await expect(page.locator('h1')).toBeVisible();await context.close();
 });

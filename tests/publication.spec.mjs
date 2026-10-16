@@ -1,13 +1,13 @@
 import { test, expect } from '@playwright/test';
 import { readdir, readFile } from 'node:fs/promises';
 
-test('published pages contain only the approved six projects and their current titles', async ({ page, request }) => {
+test('published pages contain only the approved nine projects and their current titles', async ({ page, request }) => {
  const root='/Portofolio/';
  for (const locale of ['', 'en/']) {
   await page.goto(root+locale);
-  await expect(page.locator('.project-card')).toHaveCount(6);
+  await expect(page.locator('.project-card')).toHaveCount(9);
   await expect(page.locator('.project-card h3').first()).toHaveText('AI-Powered Access/session Monitoring');
-  await expect(page.locator('#project-count')).toContainText('6');
+  await expect(page.locator('#project-count')).toContainText('9');
   for (const removed of ['rabid', 'kopra']) {
    expect((await request.get(root+locale+'projects/'+removed+'/')).status()).toBe(404);
   }

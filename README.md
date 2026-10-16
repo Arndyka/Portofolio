@@ -21,7 +21,8 @@ The production site has no runtime package dependencies, database, account syste
 ## Edit content
 
 - `content/profile.mjs`: biography, contact links, experience, education, skills, learning.
-- `content/projects.mjs`: six bilingual case studies, roles, deliverables and limitations.
+- `content/projects.mjs`: nine bilingual case studies, roles, deliverables and limitations.
+- `content/personal-projects.mjs`: RetailLens, Spendly and collaborative Date Planner, including public demo/source links.
 - `scripts/build.mjs`: page templates, metadata, sitemap and 404 pages.
 - `scripts/art.mjs`: original SVG project illustrations with sample/conceptual data.
 - `scripts/icons.mjs`: consistent line icons for engineering, data, AI and banking.

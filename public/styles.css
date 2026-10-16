@@ -426,3 +426,5 @@ button:focus-visible,a:focus-visible{outline:3px solid #347c69;outline-offset:5p
  .profile-projects{gap:17px}.profile-projects article{padding-top:14px}.profile-projects p{font-size:9pt;line-height:1.55;margin-top:7px;color:#222}.profile-projects h3{font-size:11pt}.profile-projects small{font-size:8pt;margin-top:7px}
  a{color:#111}.profile-page section>h3{font-size:12pt}
 }
+
+.project-resources{display:grid;gap:18px;margin:24px 0}.project-resources .button{font-size:16px;text-align:center;padding:14px 16px}.project-resources .text-link{font-size:16px}.filters{flex-wrap:wrap}
